@@ -1,7 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
+    `maven-publish`
 }
+
+group = "com.github.ngorse"
 
 android {
     namespace = "io.sspinc.blinklibrary"

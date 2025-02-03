@@ -19,7 +19,7 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = false
+            isMinifyEnabled = true
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
@@ -51,11 +51,11 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            create<MavenPublication>("debug") {
-                from(components["debug"])
+            create<MavenPublication>("release") {
+                from(components["release"])
                 groupId = "com.github.ngorse"
                 artifactId = "blinklibrary"
-                version = "0.5"
+                version = "1.0"
             }
         }
     }

@@ -10,8 +10,6 @@ import androidx.activity.result.ActivityResultLauncher
 import io.sspinc.blinklibrary.Popup
 
 object BlinkEffect {
-    private lateinit var launcher: ActivityResultLauncher<Intent>
-
     fun blink(view: View) {
         val event = ScreenView("Main screen")
         Snowplow.defaultTracker?.track(event)
@@ -30,7 +28,6 @@ object BlinkEffect {
         animator.repeatCount = Animation.INFINITE
         animator.start()
 
-        val intent = Intent(view.context, Popup::class.java)
-        launcher.launch(intent)
+        view.context.startActivity(Intent(view.context, Popup::class.java))
     }
 }

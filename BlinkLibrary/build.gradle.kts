@@ -43,6 +43,9 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     implementation("com.snowplowanalytics:snowplow-android-tracker:6.+")
+    implementation("androidx.activity:activity-ktx")
+    implementation("androidx.appcompat:appcompat")
+    implementation("androidx.core:core-ktx")
 }
 
 afterEvaluate {

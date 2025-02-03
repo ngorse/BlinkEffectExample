@@ -42,6 +42,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
+    implementation("com.snowplowanalytics:snowplow-android-tracker:6.+")
 }
 
 afterEvaluate {
@@ -51,7 +52,7 @@ afterEvaluate {
                 from(components["release"])
                 groupId = "com.github.ngorse"
                 artifactId = "blinklibrary"
-                version = "0.4"
+                version = "0.5"
             }
         }
     }

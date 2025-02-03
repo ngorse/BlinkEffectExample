@@ -3,10 +3,15 @@ import android.animation.ObjectAnimator
 import android.graphics.Color
 import android.view.View
 import android.view.animation.Animation
+import com.snowplowanalytics.snowplow.Snowplow
+import com.snowplowanalytics.snowplow.event.ScreenView
 
 object BlinkEffect {
 
     fun blink(view: View) {
+        val event = ScreenView("Main screen")
+        Snowplow.defaultTracker?.track(event)
+
         // adding the color to be shown
         val animator: ObjectAnimator = ObjectAnimator.ofInt(
             view, "backgroundColor", Color.YELLOW,

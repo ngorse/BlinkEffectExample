@@ -51,8 +51,8 @@ dependencies {
 afterEvaluate {
     publishing {
         publications {
-            create<MavenPublication>("release") {
-                from(components["release"])
+            create<MavenPublication>("debug") {
+                from(components["debug"])
                 groupId = "com.github.ngorse"
                 artifactId = "blinklibrary"
                 version = "0.5"
